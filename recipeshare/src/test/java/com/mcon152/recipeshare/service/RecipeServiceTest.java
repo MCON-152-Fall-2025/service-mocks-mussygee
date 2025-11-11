@@ -283,7 +283,7 @@ class RecipeServiceTest {
             // Echo back what was saved
             when(recipeRepository.save(any(Recipe.class))).thenAnswer(inv -> inv.getArgument(0));
 
-            Recipe changes = new Recipe(null, "NEW TITLE", "NEW DESC", "NEW ING", "NEW INST", 10);
+            Recipe changes = new Recipe(null, "NEW TITLE", "NEW DESC", "NEW ING", "NEW INST", null);
 
             Optional<Recipe> out = recipeService.updateRecipe(id, changes);
             assertTrue(out.isPresent());
